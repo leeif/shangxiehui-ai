@@ -7,8 +7,7 @@ config.json
   }
 }
 ```
-
-moonshoot的api key从这里获取 https://platform.moonshot.cn/console/api-keys
+* moonshoot的api key从这里获取 https://platform.moonshot.cn/console/api-keys
 
 # Docker运行
 
@@ -26,7 +25,9 @@ docker run -v ./config.json:/config.json -p 8080:8080 -it shangxiehui-ai /apiser
 # Chat API
 
 URL: http://localhost:8080/v1/chat/completion/text/stream
+
 Method: POST
+
 Body:
 ```
 {
@@ -47,7 +48,7 @@ Body:
 }
 ```
 
-messages是一个列表，可以带上历史聊天记录，role是user为用户的问题，role是assistant为机器人的回答。
+* messages是一个列表，可以带上历史聊天记录，role是user为用户的问题，role是assistant为机器人的回答。
 由于Prompt长度有限，前端可以传有限的历史记录，比如最后10条对话记录。
 
 Response:
@@ -64,7 +65,7 @@ data:{"role":"assistant","chunk":"你的"}
 
 ...
 ```
-Response是text/event格式的http response，每次返回一个chunk，前端可以逐步显示出来。
+* Response是text/event格式的http response，每次返回一个chunk，前端可以逐步显示出来。
 
 # 前端代码示例
 ```javascript
